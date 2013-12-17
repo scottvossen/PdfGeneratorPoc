@@ -16,6 +16,7 @@
     <hr>
 
     <h1>PDF My URL</h1>
+    <a href="javascript:pdf_url=location.href;location.href='http://pdfmyurl.com?s=l&url='+escape('https://www.ameriprise.com/')">a button link</a>
     <button onclick="generatePdfWithPdfMyUrl()">Generate</button>
     <hr>
   </div>
@@ -35,7 +36,7 @@
 
   function generatePdfWithPdfMyUrl() {
     var value = $("#url").val();
-    // pdfCrowdGenerator.convertURI(value);
+    return pdyMyUrlGenerator.convertURI(value);
   }
 
   </script>
