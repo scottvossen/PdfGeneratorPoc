@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PDF Generator</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <div id="content" style="margin:50px 100px 50px 100px;">
+    <label>URL: </label><input id="url" style="width:400px" value="https://www.ameriprise.com/"/>
+
+    <h1>PDF Crowd</h1>
+    <button onclick="generatePdfWithPdfCrowd()">Generate</button>
+    <hr>
+
+    <h1>PDF My URL</h1>
+    <button onclick="generatePdfWithPdfMyUrl()">Generate</button>
+    <hr>
+  </div>
+
+  <!-- framework dependencies -->
+  <script src="js/libs/jquery-1.10.2.js"></script>
+
+  <!-- app imports -->
+  <script src="js/pdf-crowd-generator.js"></script>
+  <script src="js/pdf-my-url-generator.js"></script>
+  <script>
+
+  function generatePdfWithPdfCrowd() {
+    var value = $("#url").val();
+    pdfCrowdGenerator.convertURI(value);
+  }
+
+  function generatePdfWithPdfMyUrl() {
+    var value = $("#url").val();
+    // pdfCrowdGenerator.convertURI(value);
+  }
+
+  </script>
+
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
